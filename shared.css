@@ -1,0 +1,104 @@
+/* ===== CSS Custom Properties (Design Tokens) ===== */
+:root {
+    --color-primary: #ff4500;
+    --color-primary-alt: #ff7200;
+    --color-accent: orange;
+    --color-highlight: brown;
+    --color-white: #fff;
+    --color-black: #000;
+
+    --font-sans: Arial, Helvetica, sans-serif;
+    --font-serif: 'Times New Roman', Times, serif;
+
+    --transition-default: 0.4s ease-in-out;
+    --transition-fast: 0.3s ease;
+
+    --radius-sm: 5px;
+    --radius-md: 10px;
+
+    --overlay-light: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.5) 50%,
+        rgba(0, 0, 0, 0.5) 50%
+    );
+    --overlay-dark: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8) 50%,
+        rgba(0, 0, 0, 0.8) 50%
+    );
+}
+
+/* ===== Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== Focus Utility ===== */
+.no-focus-outline:focus {
+    outline: none;
+}
+
+/* ===== Link Reset Utility ===== */
+.link-reset {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== Shared Button Base ===== */
+.btn-base {
+    height: 40px;
+    background: var(--color-primary);
+    border: none;
+    color: var(--color-white);
+    font-size: 16px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition-default);
+}
+
+.btn-base:focus {
+    outline: none;
+}
+
+.btn-base:hover {
+    background: var(--color-white);
+    color: var(--color-primary-alt);
+}
+
+.btn-base a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== Shared Nav Styles ===== */
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 14px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-family: var(--font-sans);
+    font-weight: bold;
+    transition: var(--transition-default);
+}
+
+.nav-links a:hover {
+    color: var(--color-accent);
+}
+
+/* ===== Placeholder Styles ===== */
+::placeholder {
+    color: var(--color-white);
+    font-family: var(--font-sans);
+}

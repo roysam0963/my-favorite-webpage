@@ -1,0 +1,243 @@
+/* ===== Main Hero Section (home.html) ===== */
+.main {
+    width: 100%;
+    background: var(--overlay-light), url(imag.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 109vh;
+}
+
+.navbar {
+    width: 1200px;
+    height: 75px;
+    margin: auto;
+}
+
+.icon {
+    width: 200px;
+    float: left;
+    height: 70px;
+}
+
+.logo {
+    color: var(--color-primary);
+    font-size: 35px;
+    font-family: var(--font-sans);
+    padding-left: 20px;
+    float: left;
+    padding-top: 10px;
+}
+
+.menu {
+    width: 400px;
+    float: left;
+    height: 70px;
+}
+
+/* ===== Search Bar ===== */
+.search {
+    width: 330px;
+    float: left;
+    margin-left: 270px;
+}
+
+.srch {
+    font-family: var(--font-serif);
+    width: 200px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    margin-top: 13px;
+    color: var(--color-white);
+    border-right: none;
+    font-size: 16px;
+    float: left;
+    padding: 10px;
+    border-bottom-left-radius: var(--radius-sm);
+    border-top-left-radius: var(--radius-sm);
+}
+
+.btn-search {
+    width: 100px;
+    margin-top: 13px;
+    border: 2px solid var(--color-primary);
+    border-radius: 0;
+    border-bottom-right-radius: var(--radius-sm);
+    border-top-right-radius: var(--radius-sm);
+}
+
+/* ===== Content Section ===== */
+.content {
+    width: 1200px;
+    height: auto;
+    margin: auto;
+    color: var(--color-white);
+    position: relative;
+}
+
+.content h1 {
+    width: 350px;
+    height: 75px;
+    margin: 20px;
+    font-family: var(--font-serif);
+    font-size: 30px;
+    padding-left: 10px;
+    padding-top: 30px;
+    letter-spacing: 2px;
+}
+
+.par {
+    margin-top: 85px;
+}
+
+.content .par {
+    padding-left: 35px;
+    padding-bottom: 25px;
+    font-family: var(--font-sans);
+    letter-spacing: 1.2px;
+    line-height: 23px;
+}
+
+.btn-join {
+    width: 160px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.btn-join:hover {
+    background-color: hsl(0, 43%, 99%);
+}
+
+.content span {
+    color: var(--color-highlight);
+    font-size: 40px;
+}
+
+/* ===== Login Form ===== */
+.form {
+    width: 250px;
+    height: 380px;
+    background: var(--overlay-dark);
+    position: absolute;
+    top: 110px;
+    left: 870px;
+    border-radius: var(--radius-md);
+    padding: 25px;
+}
+
+.form h2 {
+    width: 220px;
+    font-family: var(--font-sans);
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 22px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    margin: 2px;
+    padding: 8px;
+}
+
+.form input {
+    width: 240px;
+    height: 35px;
+    background: transparent;
+    border-bottom: 1px solid var(--color-accent);
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    color: var(--color-white);
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    font-family: var(--font-sans);
+}
+
+.btn-login {
+    width: 240px;
+    margin-top: 30px;
+    font-size: 18px;
+    background: var(--color-primary-alt);
+}
+
+.form .link {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    padding-top: 20px;
+    text-align: center;
+    color: var(--color-white);
+}
+
+.form .link a {
+    text-decoration: none;
+    color: var(--color-primary-alt);
+}
+
+.liw {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* ===== Social Icons ===== */
+.icons a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.icons ion-icon {
+    color: var(--color-white);
+    font-size: 30px;
+    padding-left: 14px;
+    padding-top: 5px;
+}
+
+.icons ion-icon:hover {
+    color: var(--color-primary-alt);
+}
+
+/* ===== Hero Section (index.html) ===== */
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--overlay-light), url(background.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.hero nav {
+    padding: 20px 40px;
+}
+
+.nav-links--inline {
+    float: none;
+    gap: 30px;
+}
+
+.nav-links--inline li {
+    margin-left: 0;
+    margin-top: 0;
+}
+
+#sam {
+    color: var(--color-white);
+    padding: 80px 40px;
+}
+
+#sam h1 {
+    font-family: var(--font-sans);
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#sam p {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 30px;
+}
+
+.btn-cta {
+    width: 160px;
+    font-size: 18px;
+}
