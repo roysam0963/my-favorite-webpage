@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Design</title>
+    <link rel="stylesheet" href="style.css" onerror="document.getElementById('css-error').style.display='block'">
+</head>
+<body>
+    <div id="css-error" class="error-banner" style="display:none;">
+        Failed to load stylesheet. The page may not display correctly.
+    </div>
+    <div id="icon-error" class="error-banner" style="display:none;">
+        Failed to load social media icons. Some icons may not appear.
+    </div>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">RoySam</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">DESIGN</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <form class="search-form" role="search" onsubmit="return handleSearch(event)">
+                    <input class="srch" type="search" name="query" placeholder="Type to text" aria-label="Search">
+                    <button class="btn" type="submit">search</button>
+                </form>
+                <div class="search-error" role="alert" aria-live="polite"></div>
+            </div>
+            <div class="content">
+                <h1>Web Design <br><span> &amp; Development</span> <br>Course</h1>
+                <p class="par">This course every person can study, <br> because
+                    is among of the best coarse which contains <br>
+                    defferent language like html etc. </p>
+                <button class="cn"><a href="#">JOIN US</a></button>
+            </div>
+            <div class="form">
+                <h2>Login here</h2>
+                <form id="login-form" novalidate onsubmit="return handleLogin(event)">
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Enter Email Here"
+                               required aria-required="true" aria-describedby="email-error">
+                        <span id="email-error" class="field-error" role="alert" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" placeholder="Enter Password Here"
+                               required aria-required="true" aria-describedby="password-error">
+                        <span id="password-error" class="field-error" role="alert" aria-live="polite"></span>
+                    </div>
+                    <div id="login-error" class="form-error" role="alert" aria-live="polite"></div>
+                    <button class="btnn" type="submit">Login</button>
+                </form>
+                <p class="link">Don't have an account<br>
+                    <a href="#">Sign up </a> here</p>
+                <p class="liw">Log in with</p>
+                <div class="icons">
+                    <a href="#" aria-label="Login with Facebook"><ion-icon name="logo-facebook"></ion-icon></a>
+                    <a href="#" aria-label="Login with Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+                    <a href="#" aria-label="Login with Twitter"><ion-icon name="logo-twitter"></ion-icon></a>
+                    <a href="#" aria-label="Login with Google"><ion-icon name="logo-google"></ion-icon></a>
+                    <a href="#" aria-label="Login with Skype"><ion-icon name="logo-skype"></ion-icon></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        "use strict";
+
+        function showError(element, message) {
+            element.textContent = message;
+            element.style.display = "block";
+        }
+
+        function clearError(element) {
+            element.textContent = "";
+            element.style.display = "";
+        }
+
+        function validateEmail(email) {
+            if (!email) {
+                return "Email is required.";
+            }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                return "Please enter a valid email address.";
+            }
+            return null;
+        }
+
+        function validatePassword(password) {
+            if (!password) {
+                return "Password is required.";
+            }
+            if (password.length < 6) {
+                return "Password must be at least 6 characters.";
+            }
+            return null;
+        }
+
+        window.handleLogin = function(event) {
+            event.preventDefault();
+
+            var emailInput = document.getElementById("email");
+            var passwordInput = document.getElementById("password");
+            var emailError = document.getElementById("email-error");
+            var passwordError = document.getElementById("password-error");
+            var loginError = document.getElementById("login-error");
+
+            clearError(emailError);
+            clearError(passwordError);
+            clearError(loginError);
+
+            var emailMsg = validateEmail(emailInput.value.trim());
+            var passwordMsg = validatePassword(passwordInput.value);
+            var hasErrors = false;
+
+            if (emailMsg) {
+                showError(emailError, emailMsg);
+                hasErrors = true;
+            }
+            if (passwordMsg) {
+                showError(passwordError, passwordMsg);
+                hasErrors = true;
+            }
+            if (hasErrors) {
+                return false;
+            }
+
+            try {
+                showError(loginError, "Login functionality is not yet connected to a backend.");
+            } catch (err) {
+                showError(loginError, "An unexpected error occurred. Please try again.");
+                console.error("Login error:", err);
+            }
+            return false;
+        };
+
+        window.handleSearch = function(event) {
+            event.preventDefault();
+            var searchInput = event.target.querySelector("input[name='query']");
+            var searchError = event.target.nextElementSibling;
+            clearError(searchError);
+
+            if (!searchInput.value.trim()) {
+                showError(searchError, "Please enter a search term.");
+                return false;
+            }
+
+            try {
+                showError(searchError, "Search is not yet connected to a backend.");
+            } catch (err) {
+                showError(searchError, "Search failed. Please try again.");
+                console.error("Search error:", err);
+            }
+            return false;
+        };
+
+        var form = document.getElementById("login-form");
+        if (form) {
+            var inputs = form.querySelectorAll("input");
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].addEventListener("input", function() {
+                    var errorEl = document.getElementById(this.id + "-error");
+                    if (errorEl) {
+                        clearError(errorEl);
+                    }
+                });
+            }
+        }
+
+        window.addEventListener("error", function(event) {
+            if (event.target && event.target.tagName === "IMG") {
+                console.error("Failed to load image:", event.target.src);
+                event.target.alt = "Image failed to load";
+                event.target.classList.add("img-load-error");
+            }
+        }, true);
+
+        window.onerror = function(message, source, lineno, colno, error) {
+            console.error("Unhandled error:", message, "at", source + ":" + lineno + ":" + colno);
+            return false;
+        };
+
+        window.addEventListener("unhandledrejection", function(event) {
+            console.error("Unhandled promise rejection:", event.reason);
+        });
+    })();
+    </script>
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"
+            onerror="document.getElementById('icon-error').style.display='block'; console.error('Failed to load Ionicons CDN.');">
+    </script>
+</body>
+</html>
